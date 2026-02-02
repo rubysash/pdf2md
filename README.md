@@ -39,9 +39,15 @@ The result is a clean, readable Markdown file that's easy to edit, search, and p
 ## Installation
 
 Always use a venv.
-
 ```bash
-pip install pypdf
+git clone https://github.com/rubysash/pdf2md.git
+python -m venv pdf2md
+cd pdf2md
+scripts\activate
+```
+Install the modules
+```bash
+python -m pip install pypdf
 ```
 
 
@@ -53,11 +59,9 @@ python main.py input.pdf output.md
 
 ### Examples
 
-Convert multiple PDFs:
+Convert multiple PDFs in windows:
 ```bash
-for file in *.pdf; do
-    python main.py "$file" "${file%.pdf}.md"
-done
+(pdf2md) D:\pdf2md>for %F in (*.pdf) do python main.py "%F" "%~nF.md"
 ```
 
 ## What Gets Converted
@@ -122,6 +126,3 @@ PDFs are great for printing but terrible for:
 
 Markdown solves all of these problems while maintaining readability and structure.
 
-## License
-
-Free to use and modify. No restrictions.
